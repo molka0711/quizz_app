@@ -92,9 +92,14 @@ class _ArtsPageState extends State<ArtsPage> {
     scoreF = (100 / nbquestion) * score;
   }
 
+  void test() {
+    if (nbquestion == questions!.length) {
+      finish = true;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.purple,
@@ -159,9 +164,7 @@ class _ArtsPageState extends State<ArtsPage> {
                               onPressed: () {
                                 index++;
                                 nbquestion++;
-                                if (nbquestion == questions!.length) {
-                                  finish = true;
-                                }
+                                setState(() {});
                               },
                               child: Ink(
                                 decoration: BoxDecoration(
@@ -197,9 +200,7 @@ class _ArtsPageState extends State<ArtsPage> {
                               onPressed: () {
                                 index++;
                                 nbquestion++;
-                                if (nbquestion == questions!.length) {
-                                  finish = true;
-                                }
+                                setState(() {});
                               },
                               child: Ink(
                                 decoration: BoxDecoration(
@@ -235,9 +236,7 @@ class _ArtsPageState extends State<ArtsPage> {
                               onPressed: () {
                                 index++;
                                 nbquestion++;
-                                if (nbquestion == questions!.length) {
-                                  finish = true;
-                                }
+                                setState(() {});
                               },
                               child: Ink(
                                 decoration: BoxDecoration(
@@ -274,9 +273,8 @@ class _ArtsPageState extends State<ArtsPage> {
                               onPressed: () {
                                 index++;
                                 nbquestion++;
-                                if (nbquestion == questions!.length) {
-                                  finish = true;
-                                }
+                                score++;
+                                setState(() {});
                               },
                               child: Ink(
                                 decoration: BoxDecoration(
