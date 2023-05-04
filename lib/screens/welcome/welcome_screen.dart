@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_svg/svg.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/screens/auth/login.dart';
 import 'package:quiz_app/screens/auth/main_page.dart';
-
 import '../components/MyQuiz.dart';
 import '../components/quiz_screen.dart';
-import '../components/wait_autorization.dart';
 import '../quiz/test.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
