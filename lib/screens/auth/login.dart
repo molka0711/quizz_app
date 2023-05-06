@@ -59,6 +59,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                SizedBox(height: 150),
                 Image.asset(idea, width: 100),
                 SizedBox(
                   height: 20,

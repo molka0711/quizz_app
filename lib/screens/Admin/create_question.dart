@@ -85,14 +85,21 @@ class _CreateQuestionsState extends State<CreateQuestions> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Create Questions'),
+        title: Text(
+          'Create a new Quiz',
+          style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+        ),
+        elevation: 0.0,
+        backgroundColor: Color.fromARGB(255, 111, 198, 211),
       ),
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             children: [
+              Center(child: Image.asset('assets/icons/question.gif')),
               SizedBox(
                 height: 20,
               ),
@@ -109,7 +116,9 @@ class _CreateQuestionsState extends State<CreateQuestions> {
                           val!.isEmpty ? "Enter the question" : null,
                       decoration: InputDecoration(
                         hintText: "Question",
+                        hintStyle: TextStyle(color: Colors.grey[400]),
                       ),
+                      style: TextStyle(color: Colors.black),
                       onChanged: (val) {
                         question = val;
                       },
@@ -122,7 +131,9 @@ class _CreateQuestionsState extends State<CreateQuestions> {
                           val!.isEmpty ? "Enter option 1" : null,
                       decoration: InputDecoration(
                         hintText: "Option 1",
+                        hintStyle: TextStyle(color: Colors.grey[400]),
                       ),
+                      style: TextStyle(color: Colors.black),
                       onChanged: (val) {
                         option1 = val;
                       },
@@ -135,7 +146,9 @@ class _CreateQuestionsState extends State<CreateQuestions> {
                           val!.isEmpty ? "Enter option 2" : null,
                       decoration: InputDecoration(
                         hintText: "Option 2",
+                        hintStyle: TextStyle(color: Colors.grey[400]),
                       ),
+                      style: TextStyle(color: Colors.black),
                       onChanged: (val) {
                         option2 = val;
                       },
@@ -148,7 +161,9 @@ class _CreateQuestionsState extends State<CreateQuestions> {
                           val!.isEmpty ? "Enter option 3" : null,
                       decoration: InputDecoration(
                         hintText: "Option 3",
+                        hintStyle: TextStyle(color: Colors.grey[400]),
                       ),
+                      style: TextStyle(color: Colors.black),
                       onChanged: (val) {
                         option3 = val;
                       },
@@ -161,7 +176,9 @@ class _CreateQuestionsState extends State<CreateQuestions> {
                           val!.isEmpty ? "Enter the correct answer" : null,
                       decoration: InputDecoration(
                         hintText: "Correct Answer",
+                        hintStyle: TextStyle(color: Colors.grey[400]),
                       ),
+                      style: TextStyle(color: Colors.black),
                       onChanged: (val) {
                         correctAnswer = val;
                       },
@@ -178,10 +195,20 @@ class _CreateQuestionsState extends State<CreateQuestions> {
                   ElevatedButton(
                     onPressed: finishQuiz,
                     child: Text('Finish Quiz'),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        Color.fromARGB(255, 111, 198, 211),
+                      ),
+                    ),
                   ),
                   ElevatedButton(
                     onPressed: addQuestion,
                     child: Text('Next Question'),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        Color.fromARGB(255, 111, 198, 211),
+                      ),
+                    ),
                   ),
                 ],
               ),

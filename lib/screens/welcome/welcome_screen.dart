@@ -6,6 +6,7 @@ import 'package:quiz_app/screens/auth/login.dart';
 import 'package:quiz_app/screens/auth/main_page.dart';
 import '../components/MyQuiz.dart';
 import '../components/quiz_screen.dart';
+import '../components/wait_autorization.dart';
 import '../quiz/test.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -140,9 +141,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ArtsPage(quizId: quizId),
+                            //builder: (context) => ArtsPage(quizId: quizId),
+                            // builder: (context) => Autorization(quizId: quizId),
 
-                            //builder: (context) => MyGifImage(),
+                            builder: (context) => ArtsPage(
+                              quizId: quizId,
+                            ),
                             // builder: (context) => QuizScreen(quizId: quizId),
                           ),
                         );

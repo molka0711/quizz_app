@@ -49,8 +49,7 @@ class _HomeState extends State<Home> {
                       String id = doc.id;
 
                       String title = doc.get('title') ?? '';
-                      String description =
-                          'Quiz ID: ' + (doc.get('quizId') ?? '');
+                      String description = doc.get('quizId') ?? '';
                       String imageUrl = doc.get('imageUrl') ?? '';
 
                       return GestureDetector(

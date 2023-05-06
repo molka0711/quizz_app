@@ -60,4 +60,32 @@ class DatabaseService {
       print('Quiz with ID $quizId not found');
     }
   }
+
+  Future<List<Map<String, dynamic>>> getUsers() async {
+    List<Map<String, dynamic>> scores = [];
+
+    QuerySnapshot querySnapshot =
+        await FirebaseFirestore.instance.collection('users').get();
+    print(getUsers());
+
+    querySnapshot.docs.forEach((doc) {
+      scores.add({
+        'username': doc.id,
+        'score': doc.data(),
+      });
+    });
+    print("scores11${scores}");
+    scores.sort((a, b) {
+      if (a['score'] == null) {
+        return 1;
+      } else if (b['score'] == null) {
+        return -1;
+      } else {
+        return b['score'].compareTo(a['score']);
+      }
+    });
+    print("scoresafteeeeeer${scores}");
+
+    return scores;
+  }
 }
